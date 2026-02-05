@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Kunal 🤍</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  button {
+    padding: 14px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #yes {
+    background-color: #ff5f9e;
+    color: white;
+  }
+
+  #no {
+    background-color: #eeeeee;
+    color: #333;
+    position: absolute;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mp3">
+</audio>
+
+<h1>Kunal, will you be my Valentine 😗?</h1>
+
+<div>
+  <button id="yes">Yes 🤍</button>
+  <button id="no">No 🙈</button>
+</div>
+
+<script>
+
+/* YES CLICK */
+document.getElementById("yes").onclick = function () {
+  document.body.innerHTML = `
+  
+  <style>
+    body {
+      background:white;
+      text-align:center;
+      font-family:Arial, sans-serif;
+      overflow:hidden;
+    }
+
+    .hearts {
+      font-size:60px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .heart-rain {
+      position:fixed;
+      top:-10px;
+      font-size:24px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+
+  <h1>THE OBVIOUS CHOICE! 🥰 ❤️</h1>
+
+  <p style="font-size:22px;color:#555;">
+    Hah! I knew it ❤️
+  </p>
+
+  <!-- Cute animated cartoon hearts -->
+  <div class="hearts">💖 💕 💗 💞</div>
+
+  <!-- Falling hearts -->
+  <div class="heart-rain" style="left:10%;">❤️</div>
+  <div class="heart-rain" style="left:30%;animation-delay:1s;">💖</div>
+  <div class="heart-rain" style="left:50%;animation-delay:2s;">💕</div>
+  <div class="heart-rain" style="left:70%;animation-delay:3s;">💗</div>
+  <div class="heart-rain" style="left:90%;animation-delay:4s;">💞</div>
+
+  `;
+};
+
+/* RUNAWAY NO BUTTON */
+const noBtn = document.getElementById("no");
+
+const messages = [
+  "Uh huh choose again 🥺",
+  "Invalid choice 🙄",
+  "Error! 🫥",
+  "You mean, yes? 🤨"
+];
+
+let i = 0;
+
+noBtn.addEventListener("mouseover", function () {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 60);
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+
+  noBtn.innerText = messages[i % messages.length];
+  i++;
+});
+
+</script>
+
+</body>
+</html>
